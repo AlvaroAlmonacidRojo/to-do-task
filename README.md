@@ -1,47 +1,44 @@
-# TypeScript Next.js example
+# Description
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+Project to log our day-to-day activities created with Next.js and TypeScript. Additionally, as a design system, I've utilized Material UI. This web app consists of two pages, the login page, which will always be accessed as long as there is no token saved in the application. To obtain this "fake" token, I've created a small API in Next.js that returns this token and saves it in localStorage. I've established a context to retrieve that token, and if it's not found, it redirects us to the login page. Once we've logged in with a fake username and password, we'll proceed to the main page where we have the main functionality to add, edit, mark as done, and delete tasks.
 
-## Deploy your own
+Additionally, I've created tests for the core functionalities of the application.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+I have set up a small pipeline to deploy this project on GitHub Pages (https://alvaroalmonacidrojo.github.io/to-do-task/). However, it is advisable to test it locally since the API is not operational on GitHub Pages.
+# Set up
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Install dependencies
 
 ```bash
-npx create-next-app --example with-typescript with-typescript-app
+yarn
 ```
+
+Run the project locally
 
 ```bash
-yarn create next-app --example with-typescript with-typescript-app
+yarn dev
 ```
 
+## Screenshots
+
+Login
+
+<img src="./docs/login.png" width="900"/>
+
+Home
+
+<img src="./docs/home.png" width="900"/>
+
+Add Task
+
+<img src="./docs/addTask.png" width="900"/>
+
+Tests
+
+<img src="./docs/tests.png" width="900"/>
+
+
+## Run tests
 ```bash
-pnpm create next-app --example with-typescript with-typescript-app
+yarn test
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
-```
-npm install --save-dev typescript
-```
-
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
-
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
