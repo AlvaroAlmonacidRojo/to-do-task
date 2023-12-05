@@ -1,20 +1,13 @@
 import * as React from "react";
-import { Task, User } from "../../interfaces";
-import { AccountCircle, LogoutRounded } from "@mui/icons-material";
-import { useAuth } from "../../hooks/auth";
+import { Task } from "../../interfaces";
 import {
   Box,
-  Button,
-  Card,
   Checkbox,
-  Divider,
-  Grid,
   IconButton,
   List,
   ListItem,
   ListItemText,
   TextField,
-  Typography,
 } from "@mui/material";
 import {
   SaveAs as SaveIcon,

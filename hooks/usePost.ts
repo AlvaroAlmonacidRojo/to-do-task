@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 interface RequestOptions<T> {
@@ -25,7 +26,7 @@ const usePost = <T>() => {
     setResult({ data: null, loading: true, error: null });
 
     try {
-      const response = await fetch(url, {
+      const response = await axios.post(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,21 +34,11 @@ const usePost = <T>() => {
         body: JSON.stringify(body),
       });
 
-      const data = await response.json();
+      const data = await response.data;
 
-      if (response.ok) {
-        const newResult = { data, loading: false, error: null };
-        setResult(newResult);
-        return newResult;
-      } else {
-        const newResult = {
-          data: null,
-          loading: false,
-          error: data.message || "Error",
-        };
-        setResult(newResult);
-        return newResult;
-      }
+      const newResult = { data, loading: false, error: null };
+      setResult(newResult);
+      return newResult;
     } catch (error) {
       const newResult = { data: null, loading: false, error: "Error" };
       setResult(newResult);

@@ -3,8 +3,8 @@ import Head from "next/head";
 import {
   Container,
 } from "@mui/material";
-import { useAuth } from "../hooks/auth";
-import NavBar from "./NavBar";
+import { useAuth } from "../../hooks/auth";
+import NavBar from "../NavBar";
 
 type Props = {
   children?: ReactNode;
